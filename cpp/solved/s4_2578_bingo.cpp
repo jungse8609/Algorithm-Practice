@@ -1,4 +1,4 @@
-// Bak S4 2578 ºù°í 
+// Bak S4 2578 ë¹™ê³  
 
 #include <iostream>
 using namespace std;
@@ -10,13 +10,13 @@ int main()
 
     /*
 
-    ÇÑ ¼ýÀÚ ºÎ¸¦ ¶§¸¶´Ù 25¹ø Å½»ö.
-    ºù°í ¿©ºÎ È®ÀÎ 12 x 5 = 60¹ø(°¡·Î 5, ¼¼·Î 5, ´ë°¢¼± 2)
+    í•œ ìˆ«ìž ë¶€ë¥¼ ë•Œë§ˆë‹¤ 25ë²ˆ íƒìƒ‰.
+    ë¹™ê³  ì—¬ë¶€ í™•ì¸ 12 x 5 = 60ë²ˆ(ê°€ë¡œ 5, ì„¸ë¡œ 5, ëŒ€ê°ì„  2)
 
-    ÃÑ 85¹øÀÇ Å½»öÀÌ ÀÏ¾î³ª°í ÀÌ¸¦ °è»êÇÏ¸é
+    ì´ 85ë²ˆì˜ íƒìƒ‰ì´ ì¼ì–´ë‚˜ê³  ì´ë¥¼ ê³„ì‚°í•˜ë©´
     O(N) = 85 x 25
 
-    µû¶ó¼­ Brute Force·Î ÇØµµ µÉ °Í °°´Ù.
+    ë”°ë¼ì„œ Brute Forceë¡œ í•´ë„ ë  ê²ƒ ê°™ë‹¤.
 
     */
 
@@ -31,22 +31,22 @@ int main()
     for (int i=0; i<25; ++i)
         cin >> call[i];
 
-    // call¿¡ ÇÏ³ªÇÏ³ª ´ëÀÀ
+    // callì— í•˜ë‚˜í•˜ë‚˜ ëŒ€ì‘
     for (int i=0; i<25; ++i)
     {
         for (int x=0; x<5; ++x)
         {
             for (int y=0; y<5; ++y)
             {
-                // call°ú ÀÏÄ¡ÇÏ´Â ¼ýÀÚ¸¦ board¿¡¼­ Ã£¾Æ¼­ Ç¥½Ã
+                // callê³¼ ì¼ì¹˜í•˜ëŠ” ìˆ«ìžë¥¼ boardì—ì„œ ì°¾ì•„ì„œ í‘œì‹œ
                 if (call[i] == board[x][y])
                 {
-                    // ºù°í ¿©ºÎ È®ÀÎ
+                    // ë¹™ê³  ì—¬ë¶€ í™•ì¸
                     int count = 0;
 
                     ox[x][y] = true;
                     
-                    // 1. °¡·Î
+                    // 1. ê°€ë¡œ
                     for (int a=0; a<5; ++a)
                     {
                         bool isBingo = true;
@@ -61,7 +61,7 @@ int main()
                         if (isBingo)
                             count += 1;
                     }
-                    // 2. ¼¼·Î
+                    // 2. ì„¸ë¡œ
                     for (int a=0; a<5; ++a)
                     {
                         bool isBingo = true;
@@ -76,7 +76,7 @@ int main()
                         if (isBingo)
                             count += 1;
                     }
-                    // 3. ´ë°¢¼± ¿ìÇÏÇâ
+                    // 3. ëŒ€ê°ì„  ìš°í•˜í–¥
                     bool isBingo = true;
                     for (int a=0; a<5; ++a)
                     {
@@ -89,7 +89,7 @@ int main()
                     if (isBingo)
                         count += 1;
 
-                    // 4. ´ë°¢¼± ¿ì»óÇâ
+                    // 4. ëŒ€ê°ì„  ìš°ìƒí–¥
                     isBingo = true;
                     for (int a=0; a<5; ++a)
                     {
@@ -102,7 +102,7 @@ int main()
                     if (isBingo)
                         count += 1;
 
-                    // ºù°í°¡ 3°³ ÀÌ»óÀÌ¸é Á¾·á
+                    // ë¹™ê³ ê°€ 3ê°œ ì´ìƒì´ë©´ ì¢…ë£Œ
                     if (count >= 3)
                     {
                         cout << i + 1 << '\n';
