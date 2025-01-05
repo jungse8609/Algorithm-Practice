@@ -1,14 +1,10 @@
 # Alogorithm-Practice
 
 ### 목표
-하루에 1~2문제씩 매일 풀기.
 
 ````cpp
-    1주일     : 10문제
-    1개월     : 40문제
-    6개월     : 240문제
-    12개월    : 480문제
+    바킹독 알고리즘 강의 완독(총 0x1F강)
+    일주일에 3강 듣고 관련 문제 풀기
 ````
 
-이때 문제는 `tony9402의 '오늘의 문제'` 1, 2번 문제를 푼다. </br>
-[오늘의문제] <https://github.com/tony9402/baekjoon/blob/main/picked.md>
+[바킹독 알고리즘 강의] <https://www.youtube.com/watch?v=LcOIobH7ues&list=PLtqbFd2VIQv4O6D6l9HcD732hdrnYb6CY>
