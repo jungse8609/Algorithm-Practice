@@ -1,4 +1,4 @@
-// BOG 1475 방 번호
+// BOG 3273 두 수의 합
 
 #include <iostream>
 #include <algorithm>
@@ -9,27 +9,35 @@ int main()
 {
     ios::sync_with_stdio(0); cin.tie(0);
 
-    // 일단 인풋의 각 숫자 개수를 파악해
-    // 6과 9에 대해서는 6과 9를 함께 생각해
-    // 필요한 숫자 개수의 최댓값이 필요한 세트가 되겠지
-
     int n;
     cin >> n;
-    vector<int> a(10, 0);
 
-    while (n > 0)
+    int a[2000001] = {};
+    vector<int> v(n);
+    for (int i=0; i<n; ++i)
     {
-        a[n%10] += 1;
-        n /= 10;
+        cin >> v[i];
+        a[v[i]] += 1;
     }
-    
-    int result = -1;
-    for (int i=0; i<10; ++i)
+    int x;
+    cin >> x;
+
+    int result = 0;
+    for (int i=0; i<n; ++i)
     {
-        if (i == 6 || i == 9)
-            continue;
-        result = max(result, a[i]);
+        // x를 만들기 위해 필요한 수
+        int req = x - v[i];
+
+        // 현재 수가 x보다 같거나 큰 경우는 제외
+        if (req <= 0) continue;
+
+        // 필요한 수의 개수를 결과값에 더함
+        result += a[req];
+
+        // 만약 필요한 수가 자기 자신이라면 자기를 제외해야함 
+        if (req == v[i])
+            result -= 1;
     }
-    result = max(result, (a[6] + a[9] + 1) / 2);
-    cout << result;
+
+    cout << result / 2;
 }
