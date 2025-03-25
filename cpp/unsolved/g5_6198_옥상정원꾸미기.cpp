@@ -1,4 +1,4 @@
-// BOG 6198 ¿Á»ó Á¤¿ø ²Ù¹Ì±â
+// BOG 6198 ì˜¥ìƒ ì •ì› ê¾¸ë¯¸ê¸°
 
 #include <iostream>
 #include <stack>
@@ -9,16 +9,16 @@ int main() {
     cin.tie(0);
 
     int n; cin >> n;
-    // stack¿¡ ÀÖ´Â °Ç¹°µéÀº ¾ÆÁ÷ °¡·Î¸·È÷Áö ¾ÊÀº °Ç¹°À» ¶æÇÔ
+    // stackì— ìžˆëŠ” ê±´ë¬¼ë“¤ì€ ì•„ì§ ê°€ë¡œë§‰ížˆì§€ ì•Šì€ ê±´ë¬¼ì„ ëœ»í•¨
     stack<int> s;
     long long result = 0;
     while (n--)
     {
         int h; cin >> h;
-        // ³ôÀº °Ç¹°¿¡ ¸·È÷´Â ¾ÖµéÀº pop()
+        // ë†’ì€ ê±´ë¬¼ì— ë§‰ížˆëŠ” ì• ë“¤ì€ pop()
         while (!s.empty() && s.top() <= h)
             s.pop();
-        // stack¿¡ ³²¾ÆÀÖ´Â °Ç¹°Àº ÇöÀç °Ç¹°À» °üÂû °¡´ÉÇÔ
+        // stackì— ë‚¨ì•„ìžˆëŠ” ê±´ë¬¼ì€ í˜„ìž¬ ê±´ë¬¼ì„ ê´€ì°° ê°€ëŠ¥í•¨
         result += s.size();
         s.push(h);
     }
