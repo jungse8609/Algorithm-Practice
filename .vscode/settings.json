@@ -5,6 +5,7 @@
         "stack": "cpp",
         "utility": "cpp",
         "span": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "xiosbase": "cpp"
     }
 }
